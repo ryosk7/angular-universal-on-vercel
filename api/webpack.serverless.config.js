@@ -16,7 +16,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.mjs', '.js'],
-    modules: [path.resolve(__dirname, './../../../node_modules')]
+    modules: [path.resolve(__dirname, './node_modules')]
   },
   target: 'node',
   node: {
