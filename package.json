@@ -6,7 +6,7 @@
     "build:client": "ng build ng-universal-on-vercel --prod",
     "build:server": "ng run ng-universal-on-vercel:server:production",
     "build:serverless": "npm run build:serverless:compile && npm run build:serverless:vercel",
-    "build:serverless:compile": "webpack-cli --config .api/serverless/webpack.serverless.config.js",
+    "build:serverless:compile": "webpack-cli --config api/serverless/webpack.serverless.config.js",
     "build:serverless:vercel": "cp -r ./serverless/vercel/. ./dist/apps/ng-universal-on-vercel/",
     "test": "ng test daffio --watch=false --browsers=ChromeHeadless",
     "lint": "cd ../.. && ng lint ng-universal-on-vercel",
@@ -53,6 +53,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.5",
+    "webpack-cli": "^4.8.0"
   }
 }
