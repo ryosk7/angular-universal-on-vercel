@@ -2,16 +2,17 @@
   "name": "ng-universal-on-vercel",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "build": "npm run build:client && npm run build:server && npm run build:serverless",
+    "build:client": "ng build ng-universal-on-vercel --prod",
+    "build:server": "ng run ng-universal-on-vercel:server:production",
+    "build:serverless": "npm run build:serverless:compile && npm run build:serverless:vercel",
+    "build:serverless:compile": "webpack-cli --config .api/serverless/webpack.serverless.config.js",
+    "build:serverless:vercel": "cp -r ./serverless/vercel/. ./dist/apps/ng-universal-on-vercel/",
+    "test": "ng test daffio --watch=false --browsers=ChromeHeadless",
+    "lint": "cd ../.. && ng lint ng-universal-on-vercel",
+    "lint:fix": "npm run lint -- --fix",
     "dev:ssr": "ng run ng-universal-on-vercel:serve-ssr",
-    "serve:ssr": "node dist/ng-universal-on-vercel/server/main.js",
-    "build:ssr": "ng build --prod && ng run ng-universal-on-vercel:server:production",
-    "prerender": "ng run ng-universal-on-vercel:prerender"
+    "serve:ssr": "node ./dist/apps/ng-universal-on-vercel/server/main.js"
   },
   "private": true,
   "dependencies": {
