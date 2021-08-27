@@ -11,7 +11,7 @@
     "lint": "cd ../.. && ng lint ng-universal-on-vercel",
     "lint:fix": "npm run lint -- --fix",
     "dev:ssr": "ng run ng-universal-on-vercel:serve-ssr",
-    "serve:ssr": "node ./dist/apps/ng-universal-on-vercel/server/main.js"
+    "serve:ssr": "node dist/apps/ng-universal-on-vercel/server/main.js"
   },
   "private": true,
   "dependencies": {
