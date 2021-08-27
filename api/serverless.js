@@ -1,3 +1,3 @@
-const server = require(__dirname, './dist/ng-universal-on-vercel/server/main.js');
+const server = require('../dist/ng-universal-on-vercel/server/main');
 
 module.exports = server.app();
